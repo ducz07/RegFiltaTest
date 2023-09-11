@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-index",
+      "settings": {
+      }
+    },
+    "b203b2d3-8068-4125-9020-ca895bc2b042": {
+      "type": "main-product",
+      "settings": {
+        "featured_product": "featured-products"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b203b2d3-8068-4125-9020-ca895bc2b042"
+  ]
+}

@@ -1,0 +1,51 @@
+{{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
+
+<div class="product__container">
+    <h1>Featured Products</h1>
+    <div class="product__lists">
+        <ul class="swiper-container">
+        <div class="swiper-wrapper">
+            {%- for product in section.settings.featured_product.products -%}
+                <li class="swiper-slide">
+                    {% render 'product-card',
+                    card_product: product
+                    %}
+                </li>
+            {%- endfor -%}
+            </div>
+        </ul>
+    </div>
+</div>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper(".swiper-container", {
+      slidesPerView: "auto",
+      breakpoints: {
+        768: {
+          slidesPerView: 4
+        }
+      }
+    });
+  });
+</script>
+
+{% schema %}
+
+{
+    "name": "Feature Products",
+    "settings": [
+        {
+            "type": "collection",
+            "id": "featured_product",
+            "label": "Featured Products"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Product"
+        }
+    ]
+}
+
+{% endschema %}
